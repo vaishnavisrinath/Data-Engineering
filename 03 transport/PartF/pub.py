@@ -16,9 +16,7 @@ vehicle_3257_records = [record for record in data["vehicle_3257"]]
 
 for record in vehicle_3940_records:
     data_str = json.dumps(record)
-    # Data must be a bytestring
     data_bytes = data_str.encode("utf-8")
-    # When you publish a message, the client returns a future.
     future = publisher.publish(topic_path, data_bytes)
     print(future.result())
     time.sleep(0.25)  # Sleep for 250 milliseconds
@@ -27,9 +25,7 @@ print(f"Published messages for vehicle 3940 to {topic_path}.")
 
 for record in vehicle_3257_records:
     data_str = json.dumps(record)
-    # Data must be a bytestring
     data_bytes = data_str.encode("utf-8")
-    # When you publish a message, the client returns a future.
     future = publisher.publish(topic_path, data_bytes)
     print(future.result())
     time.sleep(0.25)  # Sleep for 250 milliseconds
